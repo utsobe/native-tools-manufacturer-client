@@ -16,8 +16,8 @@ const Navbar = ({ children }) => {
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
                     {/* <!-- Navbar --> */}
-                    <div className=' bg-secondary sticky top-0 z-50'>
-                        <div className="w-full lg:max-w-7xl mx-auto navbar lg:px-12">
+                    <div className='bg-secondary sticky top-0 z-50'>
+                        <div className="lg:max-w-7xl mx-auto navbar lg:px-12">
                             <div className="flex-1 px-2 mx-2 text-2xl font-bold">NATIVE TOOLS</div>
                             <div className="flex-none lg:hidden">
                                 <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">

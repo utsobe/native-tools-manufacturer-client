@@ -11,7 +11,7 @@ const Tools = () => {
     }, [])
 
     return (
-        <div className='lg:max-w-7xl mx-auto lg:px-12 min-h-screen'>
+        <div className='lg:max-w-7xl mx-auto lg:px-12'>
             <h2 className='text-secondary text-4xl font-bold my-12 text-center'>Latest Tools</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4'>
                 {
