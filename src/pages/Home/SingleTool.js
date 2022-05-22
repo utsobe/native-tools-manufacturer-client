@@ -7,7 +7,7 @@ const SingleTool = ({ tool }) => {
         <div>
             <div class="card bg-base-100 drop-shadow-xl ">
                 <figure class="px-10 pt-10">
-                    <img src={image ? image : imgAlt} alt="" class="rounded-xl " />
+                    <img src={image ? image : imgAlt} alt="" class="rounded-xl hover:scale-110 transition duration-700 ease-in-out" />
                 </figure>
                 <div class="card-body">
                     <h2 class="card-title">{name}</h2>
