@@ -6,10 +6,11 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
 import Review from "./pages/Review/Review";
 import Navbar from "./shared/Navbar";
+import bgImage from './assets/bg-image/bg-img-1.jpg';
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover' }}>
       <Navbar>
         <Routes>
           <Route path="/" element={<Home />} />

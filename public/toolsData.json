@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "image": "https://i.ibb.co/H7MXqDZ/tool-2.png",
+        "name": "Cordless 5-in-1 Drill/Driver Kit",
+        "description": "the XTREME™ 12V MAX* Brushless Cordless 5-in-1 Drill/Driver Kit.",
+        "price": 415,
+        "moq": 100,
+        "quantity": 277
+    },
+    {
+        "_id": 2,
+        "image": "https://i.ibb.co/VHs8dTQ/tool-3.png",
+        "name": "Cordless 5-in-1 Drill/Driver Kit",
+        "description": "the XTREME™ 12V MAX* Brushless Cordless 5-in-1 Drill/Driver Kit.",
+        "price": 452,
+        "moq": 100,
+        "quantity": 264
+    },
+    {
+        "_id": 3,
+        "image": "https://i.ibb.co/tHDpbQd/tool-6.png",
+        "name": "Cordless 5-in-1 Drill/Driver Kit",
+        "description": "the XTREME™ 12V MAX* Brushless Cordless 5-in-1 Drill/Driver Kit.",
+        "price": 324,
+        "moq": 100,
+        "quantity": 690
+    },
+    {
+        "_id": 4,
+        "image": "https://i.ibb.co/zbtbfNk/tool-4.png",
+        "name": "Cordless 5-in-1 Drill/Driver Kit",
+        "description": "the XTREME™ 12V MAX* Brushless Cordless 5-in-1 Drill/Driver Kit.",
+        "price": 248,
+        "moq": 100,
+        "quantity": 616
+    },
+    {
+        "_id": 5,
+        "image": "https://i.ibb.co/r4D6Grj/too-1.png",
+        "name": "Cordless 5-in-1 Drill/Driver Kit",
+        "description": "the XTREME™ 12V MAX* Brushless Cordless 5-in-1 Drill/Driver Kit.",
+        "price": 364,
+        "moq": 100,
+        "quantity": 220
+    },
+    {
+        "_id": 6,
+        "image": "https://i.ibb.co/YD19swK/tool-5.png",
+        "name": "Cordless 5-in-1 Drill/Driver Kit",
+        "description": "the XTREME™ 12V MAX* Brushless Cordless 5-in-1 Drill/Driver Kit.",
+        "price": 325,
+        "moq": 100,
+        "quantity": 767
+    }
+]
