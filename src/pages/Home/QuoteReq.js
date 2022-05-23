@@ -11,7 +11,7 @@ const QuoteReq = () => {
                     </div>
                     <div className='flex justify-around items-center'>
                         <div>
-                            <button class="btn btn-secondary my-6 mr-6">request for quote</button>
+                            <button class="btn btn-secondary mt-6 mb-4 mr-6">request for quote</button>
                             <button class="btn btn-primary">contact us</button>
                         </div>
                     </div>
