@@ -1,11 +1,36 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const Register = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+    if (loading || gLoading) {
+        return 'loading...';
+    }
+
+    if (user || gUser) {
+        console.log(user || gUser);
+    }
+
+    if (error || gError) {
+        console.log(error || gError);
+    }
+
+
+
+    const onSubmit = data => {
+        createUserWithEmailAndPassword(data.email, data.password);
+        console.log(data.email, data.password)
+    };
     return (
         <div className='flex justify-center items-center h-screen px-4 my-4'>
             <div className='card bg-base-100 w-full max-w-sm px-10 pb-10'>
@@ -57,7 +82,7 @@ const Register = () => {
                 </form>
                 <p className='text-center pt-3'>Already have an account? <Link to='/login' className='text-secondary link link-hover'>Login</Link></p>
                 <div class="divider">OR</div>
-                <button className='btn btn-outline btn-secondary'>continue with google</button>
+                <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-secondary'>continue with google</button>
             </div>
         </div>
     );
