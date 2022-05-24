@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import imgAlt from '../../assets/img-alt.png';
 
 const SingleTool = ({ tool }) => {
-    const { image, name, description, price, moq, quantity } = tool;
+    const { _id, image, name, description, price, moq, quantity } = tool;
+    const navigate = useNavigate();
     return (
         <div>
             <div class="card bg-base-100 drop-shadow-xl ">
@@ -19,7 +21,7 @@ const SingleTool = ({ tool }) => {
                             <h2 className='text-xl'>Available: {quantity} Units</h2>
                         </div>
                         <div class="card-actions">
-                            <button class="btn btn-secondary">Buy Now</button>
+                            <button onClick={() => navigate(`/purchase/${_id}`)} class="btn btn-secondary">Buy Now</button>
                         </div>
                     </div>
                 </div>

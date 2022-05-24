@@ -3,9 +3,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
+import Loading from './Loading';
 
 const Navbar = ({ children }) => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     const menuItems = <>
         <li><NavLink className='rounded-lg font-bold' to='/'>Home</NavLink></li>

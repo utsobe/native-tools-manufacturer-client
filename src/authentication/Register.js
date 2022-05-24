@@ -104,7 +104,7 @@ const Register = () => {
                 </form>
                 <p className='text-center pt-3'>Already have an account? <Link to='/login' className='text-secondary link link-hover'>Login</Link></p>
                 <div class="divider">OR</div>
-                <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-secondary'>continue with google</button>
+                <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-primary'>continue with google</button>
             </div>
 
         </div>
