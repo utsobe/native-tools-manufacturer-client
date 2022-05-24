@@ -1,9 +1,13 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import Loading from '../shared/Loading';
+import { toast } from 'react-toastify';
 
 const Register = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         createUserWithEmailAndPassword,
@@ -12,25 +16,43 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [sendEmailVerification, sending, vError] = useSendEmailVerification(auth);
+    const [updateProfile, updating, uError] = useUpdateProfile(auth);
 
-    if (loading || gLoading) {
-        return 'loading...';
+    let from = location.state?.from?.pathname || '/';
+
+    if (loading || gLoading || sending || updating) {
+        return <Loading></Loading>;
     }
 
-    if (user || gUser) {
-        console.log(user || gUser);
+    if ((user || gUser) && !error) {
+        console.log(user.user || gUser);
+        if (user.user.uid || gUser.user.uid) {
+            toast.success('Registered successfully', {
+                toastId: 'resgistered'
+            });
+            toast.success('Verification email send', {
+                toastId: 'verificaiton'
+            });
+        }
+        navigate('/');
     }
 
     if (error || gError) {
-        console.log(error || gError);
+        if (error.message.includes('auth/email-already-in-use')) {
+            toast.error('Already registered', {
+                toastId: 'error'
+            });
+        }
     }
 
-
-
-    const onSubmit = data => {
-        createUserWithEmailAndPassword(data.email, data.password);
-        console.log(data.email, data.password)
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await sendEmailVerification();
+        await updateProfile({ displayName: data.name });
+        navigate(from, { replace: true });
     };
+
     return (
         <div className='flex justify-center items-center h-screen px-4 my-4'>
             <div className='card bg-base-100 w-full max-w-sm px-10 pb-10'>
@@ -84,6 +106,7 @@ const Register = () => {
                 <div class="divider">OR</div>
                 <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-secondary'>continue with google</button>
             </div>
+
         </div>
     );
 };

@@ -1,11 +1,33 @@
 import React from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../firebase.init';
+import Loading from '../shared/Loading';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    let from = location.state?.from?.pathname || '/';
+
+    if (loading) {
+        return <Loading />;
+    }
+
+    const onSubmit = data => {
+        console.log(data)
+        signInWithEmailAndPassword(data.email, data.password);
+        console.log('login success');
+        navigate(from, { replace: true });
+    };
 
     return (
         <div className='flex justify-center items-center h-screen px-4'>
@@ -37,7 +59,7 @@ const Login = () => {
                                 value: 6,
                                 message: 'Password too short'
                             }
-                        })} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                        })} type="password" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
                         <label class="label">
                             {errors?.password && <span class="label-text-alt text-red-600">{errors.password.message}</span>}
                         </label>

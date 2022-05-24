@@ -8,7 +8,8 @@ import Navbar from "./shared/Navbar";
 import bgImage from './assets/bg-image/bg-img-1.jpg';
 import Reviews from "./pages/Review/Reviews";
 import Register from "./authentication/Register";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -24,7 +25,17 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
       </Navbar>
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }
