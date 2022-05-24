@@ -2,16 +2,26 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
     console.log(errors);
-
     return (
-        <div className='flex justify-center items-center h-screen px-4'>
+        <div className='flex justify-center items-center h-screen px-4 my-4'>
             <div className='card bg-base-100 w-full max-w-sm px-10 pb-10'>
-                <h2 className='text-3xl text-secondary font-bold text-center py-5'>Login</h2>
+                <h2 className='text-3xl text-secondary font-bold text-center py-5'>Register</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    <div class="form-control w-full">
+                        <label class="label">
+                            <span class="label-text">Name</span>
+                        </label>
+                        <input {...register('name', {
+                            required: 'Name required'
+                        })} type="text" placeholder="Type here" class="input input-bordered w-full" />
+                        <label class="label">
+                            {errors?.name && <span class="label-text-alt text-red-600">{errors.name.message}</span>}
+                        </label>
+                    </div>
                     <div class="form-control w-full">
                         <label class="label">
                             <span class="label-text">Email</span>
@@ -22,7 +32,7 @@ const Login = () => {
                                 value: /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/,
                                 message: 'Invalid Email'
                             }
-                        })} type="text" placeholder="Type here" class="input input-bordered w-full" />
+                        })} type="email" placeholder="Type here" class="input input-bordered w-full" />
                         <label class="label">
                             {errors?.email && <span class="label-text-alt text-red-600">{errors.email.message}</span>}
                         </label>
@@ -37,16 +47,15 @@ const Login = () => {
                                 value: 6,
                                 message: 'Password too short'
                             }
-                        })} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                        })} type="password" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
                         <label class="label">
                             {errors?.password && <span class="label-text-alt text-red-600">{errors.password.message}</span>}
                         </label>
                     </div>
-                    <p className='link link-hover'><small>Forget Password?</small></p>
 
-                    <input className='btn btn-secondary mt-5 w-full' type="submit" value='login' />
+                    <input className='btn btn-secondary w-full' type="submit" value='register' />
                 </form>
-                <p className='text-center pt-3'>Don't have an account? <Link to='/register' className='text-secondary link link-hover'>Register</Link></p>
+                <p className='text-center pt-3'>Already have an account? <Link to='/login' className='text-secondary link link-hover'>Login</Link></p>
                 <div class="divider">OR</div>
                 <button className='btn btn-outline btn-secondary'>continue with google</button>
             </div>
@@ -54,4 +63,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

@@ -7,6 +7,8 @@ import Home from "./pages/Home/Home";
 import Navbar from "./shared/Navbar";
 import bgImage from './assets/bg-image/bg-img-1.jpg';
 import Reviews from "./pages/Review/Reviews";
+import Register from "./authentication/Register";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -19,8 +21,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Navbar>
+      <ToastContainer />
     </div>
   );
 }
