@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../firebase.init';
 
@@ -12,6 +12,8 @@ const Purchase = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const [user] = useAuthState(auth);
+
+    const navigate = useNavigate();
 
     if (user) {
         // console.log(user);
@@ -39,6 +41,7 @@ const Purchase = () => {
             console.log(res.data.insertedId)
             if (res.data.insertedId) {
                 toast.success(`Order place successfully and your order value $${totalPrice}`);
+                navigate('/dashboard');
             }
         })
     }

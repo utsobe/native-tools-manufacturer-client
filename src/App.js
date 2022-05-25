@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
-            <Route index element={<MyOrders />} />
+            <Route index element={<RequireAuth><MyOrders /></RequireAuth>} />
             <Route path="review" element={<AddReview />} />
             <Route path="profile" element={<MyProfile />} />
             <Route />
