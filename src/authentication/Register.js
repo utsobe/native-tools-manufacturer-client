@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInW
 import auth from '../firebase.init';
 import Loading from '../shared/Loading';
 import { toast } from 'react-toastify';
+import useToken from '../hooks/useToken';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [sendEmailVerification, sending, vError] = useSendEmailVerification(auth);
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
+    const [token] = useToken(user || gUser)
 
     let from = location.state?.from?.pathname || '/';
 
@@ -25,7 +27,7 @@ const Register = () => {
         return <Loading></Loading>;
     }
 
-    if ((user || gUser) && !error) {
+    if ((token) && !error) {
         navigate(from, { replace: true });
         console.log(user.user || gUser);
         if (user.user.uid || gUser.user.uid) {
