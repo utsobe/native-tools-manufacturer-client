@@ -1,51 +1,45 @@
 [
     {
-        "_id": 1,
         "image": "https://i.ibb.co/H7MXqDZ/tool-2.png",
         "name": "Hammer Drill/Driver with POWER DETECT™ Tool",
         "description": "Maximize your performance on the jobsite with the 20V MAX* XR.",
-        "price": 415,
+        "price": 99,
         "moq": 100,
-        "quantity": 277
+        "quantity": 1177
     },
     {
-        "_id": 2,
         "image": "https://i.ibb.co/VHs8dTQ/tool-3.png",
         "name": "Circular Saw with FLEXVOLT 20V MAX Power",
         "description": "DEWALT® 20V MAX* brushless tools with  Advantage™ tool technology.",
         "price": 452,
-        "moq": 100,
+        "moq": 50,
         "quantity": 264
     },
     {
-        "_id": 3,
         "image": "https://i.ibb.co/tHDpbQd/tool-6.png",
         "name": "5-3/8 in. Brushless Cordless Circular Saw Kit",
         "description": "Execute tough cuts with consistent power and precision using the 20V.",
-        "price": 324,
+        "price": 110,
         "moq": 100,
-        "quantity": 690
+        "quantity": 1690
     },
     {
-        "_id": 4,
         "image": "https://i.ibb.co/zbtbfNk/tool-4.png",
         "name": "Compound Action Linesman Pliers",
         "description": "Compound Action Linesman Pliers include induction-hardened cutting.",
-        "price": 248,
-        "moq": 100,
-        "quantity": 616
+        "price": 43,
+        "moq": 200,
+        "quantity": 2816
     },
     {
-        "_id": 5,
         "image": "https://i.ibb.co/r4D6Grj/too-1.png",
         "name": "Circular Saw with FLEXVOLT Advantage™ (Tool Only)",
         "description": "the XTREME™ 12V MAX* Brushless Cordless 5-in-1 Drill/Driver Kit.",
         "price": 364,
-        "moq": 100,
-        "quantity": 220
+        "moq": 80,
+        "quantity": 720
     },
     {
-        "_id": 6,
         "image": "https://i.ibb.co/YD19swK/tool-5.png",
         "name": "Carbon Fiber Composite Staple Gun Cordless Metal",
         "description": "Staple Gun features a carbon  housing that weighs 50 percent less",

@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import SingleTool from './SingleTool';
@@ -7,8 +6,8 @@ const Tools = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
-        axios.get('toolsData.json').then(res => setTools(res.data));
-    }, [])
+        axios.get('http://localhost:5000/tool').then(res => setTools(res.data));
+    }, [tools])
 
     return (
         <div className='lg:max-w-7xl mx-auto lg:px-12'>

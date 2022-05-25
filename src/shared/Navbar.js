@@ -3,17 +3,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
-import Loading from './Loading';
 
 const Navbar = ({ children }) => {
     const [user] = useAuthState(auth);
 
     const menuItems = <>
         <li><NavLink className='rounded-lg font-bold' to='/'>Home</NavLink></li>
-        <li><NavLink className='rounded-lg font-bold' to='/dashboard'>Dashboard</NavLink></li>
         <li><NavLink className='rounded-lg font-bold' to='/review'>Review</NavLink></li>
         <li><NavLink className='rounded-lg font-bold' to='/about'>About</NavLink></li>
         <li><NavLink className='rounded-lg font-bold' to='/blog'>Blog</NavLink></li>
+        {user?.uid && <li><NavLink className='rounded-lg font-bold' to='/dashboard'>Dashboard</NavLink></li>}
         <li>
             {
                 user?.uid ?
@@ -31,6 +30,11 @@ const Navbar = ({ children }) => {
                     {/* <!-- Navbar --> */}
                     <div className='bg-secondary shadow-xl sticky top-0 z-50'>
                         <div className="lg:max-w-7xl mx-auto navbar lg:px-12">
+                            <label for="my-drawer-2" class="btn btn-square btn-ghost  lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                                </svg>
+                            </label>
                             <div className="flex-1 px-2 mx-2 text-2xl font-bold">NATIVE TOOLS</div>
                             <div className="flex-none lg:hidden">
                                 <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">

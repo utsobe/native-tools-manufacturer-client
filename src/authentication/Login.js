@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import React from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -82,9 +81,9 @@ const Login = () => {
             <div className='card bg-base-100 w-full max-w-sm px-10 pb-10'>
                 <h2 className='text-3xl text-secondary font-bold text-center py-5'>Login</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Email</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Email</span>
                         </label>
                         <input {...register('email', {
                             required: 'Email required',
@@ -92,14 +91,14 @@ const Login = () => {
                                 value: /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/,
                                 message: 'Invalid Email'
                             }
-                        })} type="email" placeholder="Type here" class="input input-bordered w-full" />
-                        <label class="label">
-                            {errors?.email && <span class="label-text-alt text-red-600">{errors.email.message}</span>}
+                        })} type="email" placeholder="Type here" className="input input-bordered w-full" />
+                        <label className="label">
+                            {errors?.email && <span className="label-text-alt text-red-600">{errors.email.message}</span>}
                         </label>
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Password</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Password</span>
                         </label>
                         <input {...register('password', {
                             required: 'Password required',
@@ -107,9 +106,9 @@ const Login = () => {
                                 value: 6,
                                 message: 'Password too short'
                             }
-                        })} type="password" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                        <label class="label">
-                            {errors?.password && <span class="label-text-alt text-red-600">{errors.password.message}</span>}
+                        })} type="password" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                        <label className="label">
+                            {errors?.password && <span className="label-text-alt text-red-600">{errors.password.message}</span>}
                         </label>
                     </div>
                     <p onClick={handleResetPassword} className='link link-hover'><small>Forget Password?</small></p>
@@ -117,7 +116,7 @@ const Login = () => {
                     <input className='btn btn-secondary mt-5 w-full' type="submit" value='login' />
                 </form>
                 <p className='text-center pt-3'>Don't have an account? <Link to='/register' className='text-secondary link link-hover'>Register</Link></p>
-                <div class="divider">OR</div>
+                <div className="divider">OR</div>
                 <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-primary'>continue with google</button>
             </div>
         </div>

@@ -7,12 +7,12 @@ const SingleTool = ({ tool }) => {
     const navigate = useNavigate();
     return (
         <div>
-            <div class="card bg-base-100 drop-shadow-xl ">
-                <figure class="px-10 pt-10">
-                    <img src={image ? image : imgAlt} alt="" class="rounded-xl hover:scale-110 transition duration-700 ease-in-out" />
+            <div className="card bg-base-100 drop-shadow-xl ">
+                <figure className="px-10 pt-10">
+                    <img src={image ? image : imgAlt} alt="" className="rounded-xl hover:scale-110 transition duration-700 ease-in-out" />
                 </figure>
-                <div class="card-body">
-                    <h2 class="card-title">{name}</h2>
+                <div className="card-body">
+                    <h2 className="card-title">{name}</h2>
                     <p>{description}</p>
                     <p className='font-bold'>${price} / Unit</p>
                     <div className='flex justify-between items-center'>
@@ -20,8 +20,8 @@ const SingleTool = ({ tool }) => {
                             <span className='ms-10'>MOQ: {moq} Units</span>
                             <h2 className='text-xl'>Available: {quantity} Units</h2>
                         </div>
-                        <div class="card-actions">
-                            <button onClick={() => navigate(`/purchase/${_id}`)} class="btn btn-secondary">Buy Now</button>
+                        <div className="card-actions">
+                            <button onClick={() => navigate(`/purchase/${_id}`)} className="btn btn-secondary">Buy Now</button>
                         </div>
                     </div>
                 </div>

@@ -26,7 +26,6 @@ const Register = () => {
     }
 
     if ((user || gUser) && !error) {
-        console.log(user);
         navigate(from, { replace: true });
         console.log(user.user || gUser);
         if (user.user.uid || gUser.user.uid) {
@@ -58,20 +57,20 @@ const Register = () => {
             <div className='card bg-base-100 w-full max-w-sm px-10 pb-10'>
                 <h2 className='text-3xl text-secondary font-bold text-center py-5'>Register</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Name</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Name</span>
                         </label>
                         <input {...register('name', {
                             required: 'Name required'
-                        })} type="text" placeholder="Type here" class="input input-bordered w-full" />
-                        <label class="label">
-                            {errors?.name && <span class="label-text-alt text-red-600">{errors.name.message}</span>}
+                        })} type="text" placeholder="Type here" className="input input-bordered w-full" />
+                        <label className="label">
+                            {errors?.name && <span className="label-text-alt text-red-600">{errors.name.message}</span>}
                         </label>
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Email</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Email</span>
                         </label>
                         <input {...register('email', {
                             required: 'Email required',
@@ -79,14 +78,14 @@ const Register = () => {
                                 value: /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/,
                                 message: 'Invalid Email'
                             }
-                        })} type="email" placeholder="Type here" class="input input-bordered w-full" />
-                        <label class="label">
-                            {errors?.email && <span class="label-text-alt text-red-600">{errors.email.message}</span>}
+                        })} type="email" placeholder="Type here" className="input input-bordered w-full" />
+                        <label className="label">
+                            {errors?.email && <span className="label-text-alt text-red-600">{errors.email.message}</span>}
                         </label>
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Password</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Password</span>
                         </label>
                         <input {...register('password', {
                             required: 'Password required',
@@ -94,16 +93,16 @@ const Register = () => {
                                 value: 6,
                                 message: 'Password too short'
                             }
-                        })} type="password" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                        <label class="label">
-                            {errors?.password && <span class="label-text-alt text-red-600">{errors.password.message}</span>}
+                        })} type="password" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                        <label className="label">
+                            {errors?.password && <span className="label-text-alt text-red-600">{errors.password.message}</span>}
                         </label>
                     </div>
 
                     <input className='btn btn-secondary w-full' type="submit" value='register' />
                 </form>
                 <p className='text-center pt-3'>Already have an account? <Link to='/login' className='text-secondary link link-hover'>Login</Link></p>
-                <div class="divider">OR</div>
+                <div className="divider">OR</div>
                 <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-primary'>continue with google</button>
             </div>
 
