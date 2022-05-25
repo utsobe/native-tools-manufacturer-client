@@ -19,7 +19,8 @@ const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [sendEmailVerification, sending, vError] = useSendEmailVerification(auth);
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
-    const [token] = useToken(user || gUser)
+
+    const [token] = useToken(user || gUser);
 
     let from = location.state?.from?.pathname || '/';
 

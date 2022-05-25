@@ -16,7 +16,10 @@ const Navbar = ({ children }) => {
         <li>
             {
                 user?.uid ?
-                    <button onClick={() => signOut(auth)} className='rounded-lg font-bold'>Logout</button>
+                    <button onClick={() => {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                    }} className='rounded-lg font-bold'>Logout</button>
                     :
                     <NavLink className='rounded-lg font-bold' to='/login'>Login</NavLink>
             }
