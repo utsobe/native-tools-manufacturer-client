@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const OrderTableBody = ({ order, index, setDeleting }) => {
-    const { toolImage, toolName, orderValue, orderQuantity, address, _id, paid } = order;
+    const { toolImage, toolName, orderValue, orderQuantity, address, _id, paid, transactionId } = order;
 
     return (
         <tr>
@@ -28,10 +28,11 @@ const OrderTableBody = ({ order, index, setDeleting }) => {
             <td>${orderValue}</td>
             <td>
                 {!paid && <Link to={`/dashboard/payment/${_id}`} class="btn btn-success btn-xs">Pay</Link>}
-                {paid && <span class="text-success">paid</span>}
+                {paid && <span class="text-success">Paid</span>}
             </td>
             <td>
-                <label onClick={() => setDeleting(order)} for="delete-confirm-modal" class="btn btn-error btn-xs ms-10">Cancel</label>
+                {!paid && <label onClick={() => setDeleting(order)} for="delete-confirm-modal" class="btn btn-error btn-xs ms-10">Cancel</label>}
+                {paid && <div>Transaction Id: <br /> <span className='text-success'>{transactionId}</span></div>}
             </td>
         </tr>
     );
