@@ -5,16 +5,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../../shared/Loading';
+import DeleteConfirmModal from './DeleteConfirmModal';
 import OrderTableBody from './OrderTableBody';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [myOrders, setMyOrders] = useState([]);
+    const [deleting, setDeleting] = useState(null);
     const navigate = useNavigate();
-    // const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        // setLoading(true);
         if (user) {
             fetch(`http://localhost:5000/order?email=${user.email}`, {
                 method: 'GET',
@@ -35,10 +35,6 @@ const MyOrders = () => {
                 });
         }
     }, [user, myOrders, navigate]);
-
-    // if (loading) {
-    //     return <Loading />;
-    // }
     return (
         <div className='lg:m-10  rounded-lg'>
             <div class="overflow-x-auto w-full">
@@ -56,11 +52,12 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            myOrders.map((order, index) => <OrderTableBody key={order._id} order={order} index={index} />)
+                            myOrders.map((order, index) => <OrderTableBody key={order._id} order={order} index={index} setDeleting={setDeleting} />)
                         }
                     </tbody>
                 </table>
             </div>
+            {deleting && <DeleteConfirmModal deleting={deleting} setDeleting={setDeleting} />}
         </div>
     );
 };

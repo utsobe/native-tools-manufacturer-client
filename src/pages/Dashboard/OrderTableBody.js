@@ -1,7 +1,10 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+import Loading from '../../shared/Loading';
 
-const OrderTableBody = ({ order, index }) => {
-    const { toolImage, toolName, orderValue, orderQuantity, address } = order;
+const OrderTableBody = ({ order, index, setDeleting }) => {
+    const { toolImage, toolName, orderValue, orderQuantity, address, } = order;
+
     return (
         <tr>
             <th>
@@ -28,7 +31,7 @@ const OrderTableBody = ({ order, index }) => {
                 <button class="btn btn-success btn-xs">Pay</button>
             </td>
             <td>
-                <button class="btn btn-error btn-xs ms-10">cancel</button>
+                <label onClick={() => setDeleting(order)} for="delete-confirm-modal" class="btn btn-error btn-xs ms-10">Cancel</label>
             </td>
         </tr>
     );
