@@ -19,7 +19,7 @@ const AddReview = () => {
             rating: data.rating
         }
 
-        axios.post('http://localhost:5000/review', review).then(res => {
+        axios.post('https://damp-tor-10320.herokuapp.com/review', review).then(res => {
             console.log(res.data);
             if (res.data.insertedId) {
                 toast.success('Review added successfully');
@@ -58,7 +58,7 @@ const AddReview = () => {
                                     value: 5,
                                     message: "Rating can't greater than 5"
                                 }
-                            })} type="text" placeholder="Rating. . ." class="input input-bordered w-full max-w-xs" />
+                            })} type="number" placeholder="Rating. . ." class="input input-bordered w-full max-w-xs" />
                             <label class="label">
                                 {errors?.rating && <span class="label-text-alt text-error">{errors.rating.message}</span>}
                             </label>

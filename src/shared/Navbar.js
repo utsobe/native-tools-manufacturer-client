@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
 
 const Navbar = ({ children }) => {
@@ -38,7 +38,7 @@ const Navbar = ({ children }) => {
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                                 </svg>
                             </label>
-                            <div className="flex-1 px-2 mx-2 text-2xl font-bold">NATIVE TOOLS</div>
+                            <div className="flex-1 px-2 mx-2 text-2xl font-bold"><Link to='/'>NATIVE TOOLS</Link></div>
                             <div className="flex-none lg:hidden">
                                 <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>

@@ -6,7 +6,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/review').then(res => setReviews(res.data));
+        axios.get('https://damp-tor-10320.herokuapp.com/review').then(res => setReviews(res.data));
     }, []);
     return (
         <div className='my-20'>
