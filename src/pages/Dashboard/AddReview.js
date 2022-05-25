@@ -29,7 +29,7 @@ const AddReview = () => {
     };
     return (
         <div className='flex justify-center items-center min-h-screen mx-4'>
-            <div class="card max-w-xl bg-base-100 shadow-xl">
+            <div class="card max-w-xl bg-base-100 shadow-2xl">
                 <div class="card-body">
                     <h2 className='text-2xl text-secondary font-bold'>Hi! Please Leave Us Review</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>

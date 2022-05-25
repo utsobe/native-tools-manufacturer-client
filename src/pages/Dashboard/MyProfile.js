@@ -14,7 +14,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const url = `http://localhost:5000/user?email=${user?.email}`;
+    const url = `http://localhost:5000/user/${user?.email}`;
 
     const { data: updatedUser, isLoading, refetch } = useQuery(['user', user.email], () => fetch(url, {
         method: 'GET',
