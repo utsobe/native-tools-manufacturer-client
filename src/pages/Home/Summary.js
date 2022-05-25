@@ -5,7 +5,7 @@ import QuoteReq from './QuoteReq';
 const Summary = () => {
     return (
         <>
-            <div className='bg-secondary mt-24'>
+            <div className='bg-secondary mt-32'>
                 <h2 className='pt-12 text-center font-bold text-4xl'>MILLIONS BUSINESS TRUST US</h2>
                 <p className='text-center font-bold pb-16'>TRY TO UNDERSTAND OUR USERS EXPECTATION</p>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-32 lg:max-w-7xl mx-auto lg:px-12'>
