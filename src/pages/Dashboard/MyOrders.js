@@ -1,10 +1,8 @@
-import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import Loading from '../../shared/Loading';
 import DeleteConfirmModal from './DeleteConfirmModal';
 import OrderTableBody from './OrderTableBody';
 
@@ -16,7 +14,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
+            fetch(`https://damp-tor-10320.herokuapp.com/order?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -38,7 +36,7 @@ const MyOrders = () => {
     return (
         <div className='lg:m-10  rounded-lg'>
             <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+                <table class="table w-full ">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

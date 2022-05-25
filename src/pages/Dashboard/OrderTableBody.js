@@ -1,9 +1,8 @@
-import axios from 'axios';
-import React, { useState } from 'react';
-import Loading from '../../shared/Loading';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OrderTableBody = ({ order, index, setDeleting }) => {
-    const { toolImage, toolName, orderValue, orderQuantity, address, } = order;
+    const { toolImage, toolName, orderValue, orderQuantity, address, _id, paid } = order;
 
     return (
         <tr>
@@ -28,7 +27,8 @@ const OrderTableBody = ({ order, index, setDeleting }) => {
             </td>
             <td>${orderValue}</td>
             <td>
-                <button class="btn btn-success btn-xs">Pay</button>
+                {!paid && <Link to={`/dashboard/payment/${_id}`} class="btn btn-success btn-xs">Pay</Link>}
+                {paid && <span class="text-success">paid</span>}
             </td>
             <td>
                 <label onClick={() => setDeleting(order)} for="delete-confirm-modal" class="btn btn-error btn-xs ms-10">Cancel</label>

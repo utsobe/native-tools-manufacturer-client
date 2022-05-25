@@ -6,7 +6,7 @@ const Tools = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/tool').then(res => setTools(res.data));
+        axios.get('https://damp-tor-10320.herokuapp.com/tool').then(res => setTools(res.data));
     }, [tools])
 
     return (

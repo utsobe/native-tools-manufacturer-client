@@ -20,7 +20,7 @@ const Purchase = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/tool/${id}`).then(res => setTool(res.data));
+        axios.get(`https://damp-tor-10320.herokuapp.com/tool/${id}`).then(res => setTool(res.data));
     }, [id]);
 
     const onSubmit = data => {
@@ -37,7 +37,7 @@ const Purchase = () => {
             phone: data.phone
         };
 
-        axios.post('http://localhost:5000/order', order).then(res => {
+        axios.post('https://damp-tor-10320.herokuapp.com/order', order).then(res => {
             console.log(res.data.insertedId)
             if (res.data.insertedId) {
                 toast.success(`Order place successfully and your order value $${totalPrice}`);
