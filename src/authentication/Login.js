@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import { data } from 'autoprefixer';
+import React from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -7,13 +8,12 @@ import auth from '../firebase.init';
 import Loading from '../shared/Loading';
 
 const Login = () => {
-    const emailRef = useRef();
     const navigate = useNavigate();
     const location = useLocation();
 
     let from = location.state?.from?.pathname || '/';
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, getValues } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
@@ -24,7 +24,6 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, rError] = useSendPasswordResetEmail(
         auth
     );
-
 
     if (user || gUser) {
         navigate(from, { replace: true });
@@ -63,7 +62,7 @@ const Login = () => {
     };
 
     const handleResetPassword = async () => {
-        const email = emailRef.current.value;
+        const email = getValues('email');
         console.log(email);
         if (email) {
             await sendPasswordResetEmail(email);
@@ -93,7 +92,7 @@ const Login = () => {
                                 value: /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/,
                                 message: 'Invalid Email'
                             }
-                        })} type="email" ref={emailRef} placeholder="Type here" class="input input-bordered w-full" />
+                        })} type="email" placeholder="Type here" class="input input-bordered w-full" />
                         <label class="label">
                             {errors?.email && <span class="label-text-alt text-red-600">{errors.email.message}</span>}
                         </label>

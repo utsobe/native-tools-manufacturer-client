@@ -26,6 +26,8 @@ const Register = () => {
     }
 
     if ((user || gUser) && !error) {
+        console.log(user);
+        navigate(from, { replace: true });
         console.log(user.user || gUser);
         if (user.user.uid || gUser.user.uid) {
             toast.success('Registered successfully', {
@@ -35,7 +37,6 @@ const Register = () => {
                 toastId: 'verificaiton'
             });
         }
-        navigate('/');
     }
 
     if (error || gError) {
@@ -50,7 +51,6 @@ const Register = () => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await sendEmailVerification();
         await updateProfile({ displayName: data.name });
-        navigate(from, { replace: true });
     };
 
     return (
