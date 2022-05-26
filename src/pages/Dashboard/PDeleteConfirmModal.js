@@ -11,7 +11,6 @@ const PDeleteConfirmModal = ({ deleting, setDeleting, refetch }) => {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         }).then(res => {
-            console.log(res);
             if (res.data.deletedCount) {
                 toast.success('Tool deleted successfully!')
                 refetch();
