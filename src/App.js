@@ -29,10 +29,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
-            <Route index element={<MyOrders />} />
+            <Route index element={<MyProfile />} />
+            <Route path="my-order" element={<MyOrders />} />
             <Route path="payment/:id" element={<Payment />} />
             <Route path="review" element={<AddReview />} />
-            <Route path="profile" element={<MyProfile />} />
             <Route path="manage-order" element={<RequireAdmin><ManageAllOrders /></RequireAdmin>} />
             <Route path="add-product" element={<RequireAdmin><AddProduct /></RequireAdmin>} />
             <Route path="make-admin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>} />

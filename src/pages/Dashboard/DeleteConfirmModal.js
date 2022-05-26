@@ -11,7 +11,6 @@ const DeleteConfirmModal = ({ deleting, setDeleting }) => {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         }).then(res => {
-            console.log(res);
             if (res.data.deletedCount) {
                 toast.success('Order cancelled successfully!')
                 setDeleting(null);

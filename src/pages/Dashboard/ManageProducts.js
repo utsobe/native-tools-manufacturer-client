@@ -1,9 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../shared/Loading';
+import ManageProductRow from './ManageProductRow';
+import PDeleteConfirmModal from './PDeleteConfirmModal';
 
 const ManageProducts = () => {
+    const [deleting, setDeleting] = useState(null);
+
+    const { data: tools, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/tool', {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()));
+
+    if (isLoading) {
+        return <Loading />;
+    }
     return (
-        <div>
-            <h2>Manage products</h2>
+        <div className='lg:m-10  rounded-lg'>
+            <div class="overflow-x-auto w-full">
+                <table class="table w-full ">
+                    {/* <!-- head --> */}
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tools Name</th>
+                            <th>Available/unit</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            tools.map((tool, index) => <ManageProductRow key={tool._id} tool={tool} index={index} setDeleting={setDeleting} />)
+                        }
+                    </tbody>
+                </table>
+            </div>
+            {deleting && <PDeleteConfirmModal deleting={deleting} setDeleting={setDeleting} refetch={refetch} />}
         </div>
     );
 };

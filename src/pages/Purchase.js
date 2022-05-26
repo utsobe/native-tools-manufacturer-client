@@ -41,7 +41,7 @@ const Purchase = () => {
             console.log(res.data.insertedId)
             if (res.data.insertedId) {
                 toast.success(`Order place successfully and your order value $${totalPrice}`);
-                navigate('/dashboard');
+                navigate('/dashboard/my-order');
             }
         })
     }
