@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./authentication/Login";
-import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
@@ -22,6 +21,7 @@ import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import ManageProducts from "./pages/Dashboard/ManageProducts";
 import RequireAdmin from "./authentication/RequireAdmin";
 import NotFound from "./pages/NotFound";
+import MyPortfolio from "./pages/MyPortfolio";
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
             <Route />
           </Route>
           <Route path="/review" element={<Reviews />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<MyPortfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

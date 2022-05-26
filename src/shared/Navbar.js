@@ -10,7 +10,7 @@ const Navbar = ({ children }) => {
     const menuItems = <>
         <li><NavLink className='rounded-lg font-bold' to='/'>Home</NavLink></li>
         <li><NavLink className='rounded-lg font-bold' to='/review'>Review</NavLink></li>
-        <li><NavLink className='rounded-lg font-bold' to='/about'>About</NavLink></li>
+        <li><NavLink className='rounded-lg font-bold' to='/portfolio'>Portfolio</NavLink></li>
         <li><NavLink className='rounded-lg font-bold' to='/blog'>Blog</NavLink></li>
         {user?.uid && <li><NavLink className='rounded-lg font-bold' to='/dashboard'>Dashboard</NavLink></li>}
         <li>
