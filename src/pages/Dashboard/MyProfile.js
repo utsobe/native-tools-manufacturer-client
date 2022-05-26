@@ -14,7 +14,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const url = `http://localhost:5000/user/${user?.email}`;
+    const url = `https://damp-tor-10320.herokuapp.com/user/${user?.email}`;
 
     const { data: updatedUser, isLoading, refetch } = useQuery(['user', user.email], () => fetch(url, {
         method: 'GET',
@@ -34,7 +34,7 @@ const MyProfile = () => {
     const onSubmit = async data => {
         console.log(data);
 
-        axios.put(`http://localhost:5000/user?email=${user?.email}`, data).then(res => {
+        axios.put(`https://damp-tor-10320.herokuapp.com/user?email=${user?.email}`, data).then(res => {
             console.log(res.data);
             refetch();
             if (res.data.upsertedCount || res.data.modifiedCount) {

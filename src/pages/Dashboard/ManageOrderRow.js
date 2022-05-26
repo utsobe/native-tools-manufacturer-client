@@ -6,7 +6,7 @@ const ManageOrderRow = ({ order, index, refetch, setDeleting }) => {
     const { _id, buyerEmail, orderValue, orderQuantity, paid, status } = order;
 
     const handleStatus = () => {
-        axios.patch(`http://localhost:5000/all-order/${_id}`, {
+        axios.patch(`https://damp-tor-10320.herokuapp.com/all-order/${_id}`, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }

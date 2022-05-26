@@ -6,7 +6,7 @@ const ManageOrderDeleteModal = ({ deleting, setDeleting, refetch }) => {
     const { toolName, buyerEmail, _id, orderQuantity, orderValue } = deleting;
 
     const handleDelete = id => {
-        axios.delete(`http://localhost:5000/all-order/${id}`, {
+        axios.delete(`https://damp-tor-10320.herokuapp.com/all-order/${id}`, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }

@@ -7,7 +7,7 @@ import ManageOrderRow from './ManageOrderRow';
 const ManageAllOrders = () => {
     const [deleting, setDeleting] = useState(null);
 
-    const { data: orders, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/all-order', {
+    const { data: orders, isLoading, refetch } = useQuery('users', () => fetch('https://damp-tor-10320.herokuapp.com/all-order', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

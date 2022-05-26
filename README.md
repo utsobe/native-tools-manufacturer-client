@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Native Tools
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A car tools manufacturer company's web application.
 
-## Available Scripts
+## Live Website Link:
 
-In the project directory, you can run:
+[https://native-tools.web.app/](https://native-tools.web.app/)
 
-### `npm start`
+## Description:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is tools manufacturer company's web application. You can find the tools section on the home page and to purchase the tools you can click on the buy now button. If you are not logged in than it will take you to the login page. If you are a new user you have to click on the register link below login button. After login it will redirect you to the page that you was trying to access. Clicking on buy now button it will take you to the purchase page and you need to fill the order details. Than click order button , it will take you to the my order page.
+On (my order) page you will see pay button which need to clicked for completing the payment. You can use any credit, debit, master etc card for paying. completing pay you just need to wait for fake delivery, ha ha ha. Whatever next we have different dashboard for both user and admin.
+I am not going write about dashboard. You need to explore my dashboard feature by your self.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Admin Credentials:
+Email: example@example.com
+Password : example123
 
-### `npm test`
+## Features and Functionalities:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Implemented React Router to navigate routes easily
+* Used Firebase to implement login and register authentication.
+* Tailwind and Daisy UI is used for better user experience.
+* React Query, Axios used to fetch and load data from server.
+* Express js used for creating API and server.
+* MongoDB used as nosql database.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

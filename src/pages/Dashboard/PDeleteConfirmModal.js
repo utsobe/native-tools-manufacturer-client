@@ -6,7 +6,7 @@ const PDeleteConfirmModal = ({ deleting, setDeleting, refetch }) => {
     const { name, quantity, _id } = deleting;
 
     const handleDelete = id => {
-        axios.delete(`http://localhost:5000/tool/${id}`, {
+        axios.delete(`https://damp-tor-10320.herokuapp.com/tool/${id}`, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }

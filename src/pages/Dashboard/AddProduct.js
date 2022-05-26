@@ -8,7 +8,7 @@ const AddProduct = () => {
 
     const onSubmit = data => {
 
-        axios.post('http://localhost:5000/tool', data, {
+        axios.post('https://damp-tor-10320.herokuapp.com/tool', data, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }

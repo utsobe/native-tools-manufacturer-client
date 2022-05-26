@@ -7,7 +7,7 @@ import PDeleteConfirmModal from './PDeleteConfirmModal';
 const ManageProducts = () => {
     const [deleting, setDeleting] = useState(null);
 
-    const { data: tools, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/tool', {
+    const { data: tools, isLoading, refetch } = useQuery('users', () => fetch('https://damp-tor-10320.herokuapp.com/tool', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

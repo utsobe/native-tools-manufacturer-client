@@ -21,6 +21,7 @@ import AddProduct from "./pages/Dashboard/AddProduct";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import ManageProducts from "./pages/Dashboard/ManageProducts";
 import RequireAdmin from "./authentication/RequireAdmin";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/purchase/:id" element={<RequireAuth><Purchase /></RequireAuth>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Navbar>
       <ToastContainer
