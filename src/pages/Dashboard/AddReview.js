@@ -39,7 +39,7 @@ const AddReview = () => {
                                 required: 'Please write something about us!',
                                 maxLength: {
                                     value: 250,
-                                    message: 'Please complete in 250 words'
+                                    message: 'Please complete in 250 letter'
                                 }
                             })} type="text" placeholder="Type here. . ." class="input input-bordered w-full max-w-xs" />
                             <label class="label">
