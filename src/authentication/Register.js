@@ -30,7 +30,6 @@ const Register = () => {
 
     if ((token) && !error) {
         navigate(from, { replace: true });
-        console.log(user.user || gUser);
         if (user.user.uid || gUser.user.uid) {
             toast.success('Registered successfully', {
                 toastId: 'resgistered'

@@ -36,7 +36,6 @@ const Login = () => {
     }
 
     if (error) {
-        console.log(error.message);
         if (error.message.includes('auth/wrong-password')) {
             toast.error('Incorrect Email or Password', {
                 toastId: "customId",
@@ -65,7 +64,6 @@ const Login = () => {
 
     const handleResetPassword = async () => {
         const email = getValues('email');
-        console.log(email);
         if (email) {
             await sendPasswordResetEmail(email);
             toast.success('Reset password email sent', {

@@ -19,18 +19,18 @@ const DeleteConfirmModal = ({ deleting, setDeleting }) => {
     };
     return (
         <div>
-            <input type="checkbox" id="delete-confirm-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-error text-lg">Are you sure you want to cancel order for <span>{toolName}</span></h3>
-                    <p class="py-4">Quantity <span className='text-error'>{orderQuantity} unit</span> and order value is <span className='text-error'>${orderValue}</span></p>
-                    <div class="modal-action">
-                        <button onClick={() => handleDelete(_id)} class="btn btn-error btn-xs">cancel order</button>
-                        <label for="delete-confirm-modal" class="btn btn-xs">back!</label>
+            <input type="checkbox" id="delete-confirm-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-error text-lg">Are you sure you want to cancel order for <span>{toolName}</span></h3>
+                    <p className="py-4">Quantity <span className='text-error'>{orderQuantity} unit</span> and order value is <span className='text-error'>${orderValue}</span></p>
+                    <div className="modal-action">
+                        <button onClick={() => handleDelete(_id)} className="btn btn-error btn-xs">cancel order</button>
+                        <label htmlFor="delete-confirm-modal" className="btn btn-xs">back!</label>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

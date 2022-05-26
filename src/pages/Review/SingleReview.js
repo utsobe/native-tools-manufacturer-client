@@ -9,8 +9,8 @@ const SingleReview = ({ reviewInfo }) => {
                 <div className="card-body">
                     <p>{review}</p>
                     <p className='font-bold'>Rating: {rating}</p>
-                    <div class="avatar mx-auto mt-3 mb-2">
-                        <div class="w-14 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+                    <div className="avatar mx-auto mt-3 mb-2">
+                        <div className="w-14 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
                             <img src={image ? image : 'https://api.lorem.space/image/face?hash=3174'} alt='' />
                         </div>
                     </div>

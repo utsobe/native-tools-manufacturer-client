@@ -5,6 +5,7 @@ import Summary from './Summary';
 import Tools from './Tools';
 import Footer from '../../shared/Footer';
 import Services from './Services';
+import Engineers from './Engineers';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Tools></Tools>
             <Summary></Summary>
             <Reviews></Reviews>
+            <Engineers></Engineers>
             <Footer></Footer>
         </>
     );

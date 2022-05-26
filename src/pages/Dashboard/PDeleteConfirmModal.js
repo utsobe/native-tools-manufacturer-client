@@ -20,18 +20,18 @@ const PDeleteConfirmModal = ({ deleting, setDeleting, refetch }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="product-delete-confirm-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-error text-lg">Are you sure you want to delete <span>{name}</span></h3>
-                    <p class="py-4">Quantity <span className='text-error'>{quantity} unit</span></p>
-                    <div class="modal-action">
-                        <button onClick={() => handleDelete(_id)} class="btn btn-error btn-sm">delete</button>
-                        <label for="product-delete-confirm-modal" class="btn btn-sm">cancel</label>
+            <input type="checkbox" id="product-delete-confirm-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-error text-lg">Are you sure you want to delete <span>{name}</span></h3>
+                    <p className="py-4">Quantity <span className='text-error'>{quantity} unit</span></p>
+                    <div className="modal-action">
+                        <button onClick={() => handleDelete(_id)} className="btn btn-error btn-sm">delete</button>
+                        <label htmlFor="product-delete-confirm-modal" className="btn btn-sm">cancel</label>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

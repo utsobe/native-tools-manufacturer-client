@@ -23,8 +23,6 @@ const MyProfile = () => {
         }
     }).then(res => res.json()));
 
-    console.log(updatedUser);
-
     if (isLoading) {
         return <Loading />;
     }
@@ -32,10 +30,8 @@ const MyProfile = () => {
     const { address, education, phone, linkedin } = updatedUser;
 
     const onSubmit = async data => {
-        console.log(data);
 
         axios.put(`https://damp-tor-10320.herokuapp.com/user?email=${user?.email}`, data).then(res => {
-            console.log(res.data);
             refetch();
             if (res.data.upsertedCount || res.data.modifiedCount) {
                 toast.success('Profile updated');
@@ -44,13 +40,13 @@ const MyProfile = () => {
     }
     return (
         <div>
-            <div class="hero min-h-screen">
-                <div class="hero-content w-full flex-col lg:flex-row gap-12">
+            <div className="hero min-h-screen">
+                <div className="hero-content w-full flex-col lg:flex-row gap-12">
                     {/* main profile */}
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div class="card-body">
-                            <div class="avatar mx-auto">
-                                <div class="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card-body">
+                            <div className="avatar mx-auto">
+                                <div className="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
                                     <img src={defaultImg} alt='' />
                                 </div>
                             </div>
@@ -80,40 +76,40 @@ const MyProfile = () => {
                                     <a href={linkedin} className='pl-2'>{linkedin}</a>
                                 </div>
                             </div>
-                            {/* <div class="form-control mt-6">
-                                <button class="btn btn-secondary">update</button>
+                            {/* <div className="form-control mt-6">
+                                <button className="btn btn-secondary">update</button>
                             </div> */}
                         </div>
                     </div>
                     {/* update profile */}
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div class="card-body">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card-body">
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div class="form-control mb-2">
+                                <div className="form-control mb-2">
                                     <label className="label">
                                         <span className="label-text">Phone</span>
                                     </label>
-                                    <input {...register('phone')} type="number" placeholder="Phone" class="input input-bordered" />
+                                    <input {...register('phone')} type="number" placeholder="Phone" className="input input-bordered" />
                                 </div>
-                                <div class="form-control mb-2">
+                                <div className="form-control mb-2">
                                     <label className="label">
                                         <span className="label-text">Address</span>
                                     </label>
-                                    <input {...register('address')} type="text" placeholder="Address" class="input input-bordered" />
+                                    <input {...register('address')} type="text" placeholder="Address" className="input input-bordered" />
                                 </div>
-                                <div class="form-control mb-2">
+                                <div className="form-control mb-2">
                                     <label className="label">
                                         <span className="label-text">Education</span>
                                     </label>
-                                    <input {...register('education')} type="text" placeholder="Education" class="input input-bordered" />
+                                    <input {...register('education')} type="text" placeholder="Education" className="input input-bordered" />
                                 </div>
-                                <div class="form-control mb-2">
+                                <div className="form-control mb-2">
                                     <label className="label">
                                         <span className="label-text">Linkedin</span>
                                     </label>
-                                    <input {...register('linkedin')} type="text" placeholder="Linkedin Url" class="input input-bordered" />
+                                    <input {...register('linkedin')} type="text" placeholder="Linkedin Url" className="input input-bordered" />
                                 </div>
-                                <input type='submit' value='update' class="btn btn-secondary w-full mt-4" />
+                                <input type='submit' value='update' className="btn btn-secondary w-full mt-4" />
                             </form>
                         </div>
                     </div>

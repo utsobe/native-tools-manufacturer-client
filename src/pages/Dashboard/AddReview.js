@@ -10,7 +10,6 @@ const AddReview = () => {
     const [user] = useAuthState(auth);
 
     const onSubmit = async data => {
-        console.log(data);
         const review = {
             image: user.photoURL,
             name: user.displayName,
@@ -20,7 +19,6 @@ const AddReview = () => {
         }
 
         axios.post('https://damp-tor-10320.herokuapp.com/review', review).then(res => {
-            console.log(res.data);
             if (res.data.insertedId) {
                 toast.success('Review added successfully');
                 reset();
@@ -29,25 +27,25 @@ const AddReview = () => {
     };
     return (
         <div className='flex justify-center items-center min-h-screen mx-4'>
-            <div class="card max-w-xl bg-base-100 shadow-2xl">
-                <div class="card-body">
+            <div className="card max-w-xl bg-base-100 shadow-2xl">
+                <div className="card-body">
                     <h2 className='text-2xl text-secondary font-bold'>Hi! Please Leave Us Review</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label"><span class="label-text">Write about us!</span></label>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label"><span className="label-text">Write about us!</span></label>
                             <textarea {...register('review', {
                                 required: 'Please write something about us!',
                                 maxLength: {
                                     value: 250,
                                     message: 'Please complete in 250 letter'
                                 }
-                            })} type="text" placeholder="Type here. . ." class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
-                                {errors?.review && <span class="label-text-alt text-error">{errors.review.message}</span>}
+                            })} type="text" placeholder="Type here. . ." className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                {errors?.review && <span className="label-text-alt text-error">{errors.review.message}</span>}
                             </label>
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label"><span class="label-text">Rate us! between (1-5)</span></label>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label"><span className="label-text">Rate us! between (1-5)</span></label>
                             <input {...register('rating', {
                                 required: 'Rating required',
                                 min: {
@@ -58,9 +56,9 @@ const AddReview = () => {
                                     value: 5,
                                     message: "Rating can't greater than 5"
                                 }
-                            })} type="number" placeholder="Rating. . ." class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
-                                {errors?.rating && <span class="label-text-alt text-error">{errors.rating.message}</span>}
+                            })} type="number" placeholder="Rating. . ." className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                {errors?.rating && <span className="label-text-alt text-error">{errors.rating.message}</span>}
                             </label>
                         </div>
 

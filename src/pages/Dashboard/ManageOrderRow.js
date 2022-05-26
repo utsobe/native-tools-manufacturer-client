@@ -29,9 +29,9 @@ const ManageOrderRow = ({ order, index, refetch, setDeleting }) => {
                 {status && <span className='text-success'>Shipped</span>}
             </td>
             <td>
-                {!paid && <label onClick={() => setDeleting(order)} for="order-delete-confirm-modal" class="btn btn-error btn-xs ms-10">cancel</label>}
+                {!paid && <label onClick={() => setDeleting(order)} htmlFor="order-delete-confirm-modal" className="btn btn-error btn-xs ms-10">cancel</label>}
             </td>
-        </tr>
+        </tr >
     );
 };
 

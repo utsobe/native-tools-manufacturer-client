@@ -20,8 +20,8 @@ const ManageAllOrders = () => {
 
     return (
         <div className='lg:m-10  rounded-lg'>
-            <div class="overflow-x-auto w-full">
-                <table class="table w-full ">
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full ">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

@@ -71,8 +71,7 @@ const CheckoutForm = ({ order }) => {
         }
         else {
             setCardError('');
-            setTransactionId(paymentIntent.id)
-            console.log(paymentIntent);
+            setTransactionId(paymentIntent.id);
             toast.success('Congrats! Your payment is completed');
 
             // store payment on database
@@ -92,7 +91,6 @@ const CheckoutForm = ({ order }) => {
                 .then(res => res.json())
                 .then(data => {
                     setProcessing(false);
-                    console.log(data);
                     navigate('/dashboard');
                 })
         }

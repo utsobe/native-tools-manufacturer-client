@@ -13,16 +13,16 @@ const Dashboard = () => {
         return <Loading />;
     }
     return (
-        <div class="drawer drawer-mobile">
-            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content bg-base-100">
+        <div className="drawer drawer-mobile">
+            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content bg-base-100">
                 {/* <!-- Page content here --> */}
                 <Outlet />
 
             </div>
-            <div class="drawer-side">
-                <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 border-r-2 text-base-content">
+            <div className="drawer-side">
+                <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+                <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 border-r-2 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     {!admin && <>
                         <li><Link to='/dashboard/my-order'>My Orders</Link></li>
@@ -38,7 +38,7 @@ const Dashboard = () => {
                 </ul>
 
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -26,10 +26,10 @@ const Payment = () => {
 
     return (
         <div className='flex justify-center items-center min-h-screen mx-4'>
-            <div class="card max-w-xl bg-base-100 shadow-xl">
-                <div class="card-body">
+            <div className="card max-w-xl bg-base-100 shadow-xl">
+                <div className="card-body">
                     <h2 className='text-2xl text-success font-bold'>Please pay for:</h2>
-                    <h2 class="card-title">{toolName}</h2>
+                    <h2 className="card-title">{toolName}</h2>
                     <p>Total quantity: <span className='font-bold'>{orderQuantity} unit</span></p>
                     <p>Total Amount: <span className='text-success font-bold'>${orderValue}</span></p>
                 </div>

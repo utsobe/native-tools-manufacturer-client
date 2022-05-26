@@ -8,7 +8,6 @@ const useToken = user => {
         const currentUser = { email: email };
         if (email) {
             axios.put(`https://damp-tor-10320.herokuapp.com/user/${email}`, currentUser).then(res => {
-                console.log('data inside useToken', res);
                 const accessToken = res.data.token;
                 localStorage.setItem('accessToken', accessToken);
                 setToken(accessToken);

@@ -16,7 +16,7 @@ const Purchase = () => {
     const navigate = useNavigate();
 
     if (user) {
-        // console.log(user);
+
     }
 
     useEffect(() => {
@@ -38,7 +38,6 @@ const Purchase = () => {
         };
 
         axios.post('https://damp-tor-10320.herokuapp.com/order', order).then(res => {
-            console.log(res.data.insertedId)
             if (res.data.insertedId) {
                 toast.success(`Order place successfully and your order value $${totalPrice}`);
                 navigate('/dashboard/my-order');

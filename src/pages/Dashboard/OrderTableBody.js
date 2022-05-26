@@ -10,15 +10,15 @@ const OrderTableBody = ({ order, index, setDeleting }) => {
                 {index + 1}
             </th>
             <td>
-                <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                        <div class="mask mask-squircle w-12 h-12">
+                <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
                             <img src={toolImage} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                     <div>
                         <div>{toolName}</div>
-                        <div class="text-sm opacity-50">Address: {address}</div>
+                        <div className="text-sm opacity-50">Address: {address}</div>
                     </div>
                 </div>
             </td>
@@ -27,14 +27,14 @@ const OrderTableBody = ({ order, index, setDeleting }) => {
             </td>
             <td>${orderValue}</td>
             <td>
-                {!paid && <Link to={`/dashboard/payment/${_id}`} class="btn btn-success btn-xs">Pay</Link>}
-                {paid && <span class="text-success">Paid</span>}
+                {!paid && <Link to={`/dashboard/payment/${_id}`} className="btn btn-success btn-xs">Pay</Link>}
+                {paid && <span className="text-success">Paid</span>}
             </td>
             <td>
-                {!paid && <label onClick={() => setDeleting(order)} for="delete-confirm-modal" class="btn btn-error btn-xs ms-10">Cancel</label>}
+                {!paid && <label onClick={() => setDeleting(order)} htmlFor="delete-confirm-modal" className="btn btn-error btn-xs ms-10">Cancel</label>}
                 {paid && <div>Transaction Id: <br /> <span className='text-success'>{transactionId}</span></div>}
             </td>
-        </tr>
+        </tr >
     );
 };
 

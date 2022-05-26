@@ -6,9 +6,9 @@ const ManageProductRow = ({ tool, index, setDeleting }) => {
         <tr>
             <th>{index + 1}</th>
             <td>
-                <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                        <div class="mask mask-squircle w-12 h-12">
+                <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
                             <img src={image} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
@@ -19,9 +19,9 @@ const ManageProductRow = ({ tool, index, setDeleting }) => {
             </td>
             <td>{quantity}</td>
             <td>
-                <label onClick={() => setDeleting(tool)} for="product-delete-confirm-modal" class="btn btn-error btn-xs ms-10">Delete</label>
+                <label onClick={() => setDeleting(tool)} htmlFor="product-delete-confirm-modal" className="btn btn-error btn-xs ms-10">Delete</label>
             </td>
-        </tr>
+        </tr >
     );
 };
 
